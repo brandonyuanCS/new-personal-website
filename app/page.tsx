@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+
 import { CustomLink } from "@/components/CustomLink";
-import { ProjectLink } from "@/components/ProjectLink";
+import { ButtonLink } from "@/components/ButtonLink";
+import { ViewAll } from "@/components/ViewAll";
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
@@ -18,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center font-sans dark:bg-black px-6 pb-24 text-zinc-900 dark:text-zinc-100">
+    <div className="flex flex-1 flex-col items-center font-sans dark:bg-black px-6 pb-24 text-zinc-900 dark:text-zinc-100">
       <main className="flex w-full max-w-lg flex-col gap-16 mt-24">
         {/* name + links */}
         <section className="flex flex-col gap-2 text-center sm:text-left">
@@ -67,15 +69,42 @@ export default function Home() {
           </div>
         </section>
 
-        {/* proejcts */}
+        {/* projects */}
         <section className="flex flex-col gap-3">
           <h2 className="text-md font-semibold">
             projects
           </h2>
           <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
-            <ProjectLink href="#" name="canvas2calendar" description="canvas lms integrated calendar" />
-            <ProjectLink href="#" name="personal website" description="my corner on the internet" />
-            <ProjectLink href="#" name="another app" description="a cool dummy project" />
+            <ButtonLink href="https://github.com/brandonyuanCS/class2calendar" target="_blank" rel="noopener noreferrer" name="class2calendar" description="web extension to sync canvas assignments to google" />
+            <ButtonLink href="https://github.com/brandonyuanCS/rerouted" target="_blank" rel="noopener noreferrer" name="rerouted" description="optimization engine for airline flight disruptions" />
+            <ButtonLink href="https://periph4all.vercel.app/" target="_blank" rel="noopener noreferrer" name="periph4all" description="gaming mouse recommender using semantic search" />
+            <ViewAll href="/projects" />
+          </div>
+        </section>
+
+        {/* notes */}
+        <section className="flex flex-col gap-3">
+          <h2 className="text-md font-semibold">
+            notes
+          </h2>
+          <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
+            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="note title 1" description="placeholder description for note 1" />
+            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="note title 2" description="placeholder description for note 2" />
+            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="note title 3" description="placeholder description for note 3" />
+            <ViewAll href="/notes" />
+          </div>
+        </section>
+
+        {/* misc */}
+        <section className="flex flex-col gap-3">
+          <h2 className="text-md font-semibold">
+            misc
+          </h2>
+          <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
+            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="misc item 1" description="placeholder description for misc item 1" />
+            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="misc item 2" description="placeholder description for misc item 2" />
+            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="misc item 3" description="placeholder description for misc item 3" />
+            <ViewAll href="/misc" />
           </div>
         </section>
       </main>

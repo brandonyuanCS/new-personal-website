@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 
-interface CustomLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> { }
+type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export function CustomLink({ className, ...props }: CustomLinkProps) {
   return (
