@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { ButtonLink } from '@/components/ButtonLink';
+import { PROJECTS } from '@/lib/projects';
 
 export default function ProjectsPage() {
   return (
@@ -20,27 +21,14 @@ export default function ProjectsPage() {
 
         <section>
           <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
-            <ButtonLink
-              href="https://github.com/brandonyuanCS/class2calendar"
-              target="_blank"
-              rel="noopener noreferrer"
-              name="class2calendar"
-              description="web extension to sync canvas assignments to google"
-            />
-            <ButtonLink
-              href="https://github.com/brandonyuanCS/rerouted"
-              target="_blank"
-              rel="noopener noreferrer"
-              name="rerouted"
-              description="optimization engine for airline flight disruptions"
-            />
-            <ButtonLink
-              href="https://periph4all.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              name="periph4all"
-              description="gaming mouse recommender using semantic search"
-            />
+            {PROJECTS.map((p) => (
+              <ButtonLink
+                key={p.slug}
+                href={`/projects/${p.slug}`}
+                name={p.name}
+                description={p.description}
+              />
+            ))}
           </div>
         </section>
       </main>

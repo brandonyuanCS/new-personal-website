@@ -74,9 +74,9 @@ export default function Home() {
             projects
           </h2>
           <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
-            <ButtonLink href="https://github.com/brandonyuanCS/class2calendar" target="_blank" rel="noopener noreferrer" name="class2calendar" description="web extension to sync canvas assignments to google" />
-            <ButtonLink href="https://github.com/brandonyuanCS/rerouted" target="_blank" rel="noopener noreferrer" name="rerouted" description="optimization engine for airline flight disruptions" />
-            <ButtonLink href="https://periph4all.vercel.app/" target="_blank" rel="noopener noreferrer" name="periph4all" description="gaming mouse recommender using semantic search" />
+            <ButtonLink href="/projects/class2calendar" name="class2calendar" description="web extension to sync canvas assignments to google" />
+            <ButtonLink href="/projects/rerouted" name="rerouted" description="optimization engine for airline flight disruptions" />
+            <ButtonLink href="/projects/periph4all" name="periph4all" description="gaming mouse recommender using semantic search" />
             <ViewAll href="/projects" />
           </div>
         </section>

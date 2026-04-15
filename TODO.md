@@ -1,0 +1,3 @@
+- give every project their own page
+- page will include image, date, tech stack, description
+- projects/page.tsx will include different categories (e.g. school, misc, [normal or something lol])
