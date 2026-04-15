@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { CustomLink } from "@/components/CustomLink";
 import { ButtonLink } from "@/components/ButtonLink";
 import { ViewAll } from "@/components/ViewAll";
-import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
@@ -88,10 +87,10 @@ export default function Home() {
             notes
           </h2>
           <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
-            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="note title 1" description="placeholder description for note 1" />
-            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="note title 2" description="placeholder description for note 2" />
-            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="note title 3" description="placeholder description for note 3" />
-            <ViewAll href="/notes" />
+            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="current reading" description="books i'm working through" />
+            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="web extensions" description="learning messages, content scripts, manifests, etc." />
+            {/* <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="note title 3" description="placeholder description for note 3" />
+            <ViewAll href="/notes" /> */}
           </div>
         </section>
 
@@ -101,10 +100,10 @@ export default function Home() {
             misc
           </h2>
           <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
-            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="misc item 1" description="placeholder description for misc item 1" />
-            <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="misc item 2" description="placeholder description for misc item 2" />
+            <ButtonLink href="https://www.instagram.com/brandon.trumpet/" target="_blank" rel="noopener noreferrer" name="trumpet & piano" description="check out my outdated music account at your own risk" />
+            {/* <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="misc item 2" description="placeholder description for misc item 2" />
             <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="misc item 3" description="placeholder description for misc item 3" />
-            <ViewAll href="/misc" />
+            <ViewAll href="/misc" /> */}
           </div>
         </section>
       </main>
