@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-
 import { CustomLink } from "@/components/CustomLink";
 import { ButtonLink } from "@/components/ButtonLink";
 import { ViewAll } from "@/components/ViewAll";
+import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
   const [copied, setCopied] = useState(false);

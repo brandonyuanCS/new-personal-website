@@ -8,6 +8,8 @@ const formatter = new Intl.DateTimeFormat("en-US", {
   timeZone: collegeStationTimezone,
   hour: "numeric",
   minute: "2-digit",
+  second: "2-digit",
+  hour12: true,
 });
 
 function formatNow(): string {
@@ -15,13 +17,16 @@ function formatNow(): string {
 }
 
 export function FooterClock() {
-  const [label, setLabel] = useState(formatNow);
+  const [label, setLabel] = useState(() => formatNow());
 
   useEffect(() => {
-    setLabel(formatNow());
-    const id = window.setInterval(() => setLabel(formatNow()), 60_000);
+    const id = window.setInterval(() => setLabel(formatNow()), 1_000);
     return () => window.clearInterval(id);
   }, []);
 
-  return <span suppressHydrationWarning>{label}</span>;
+  return (
+    <span className="shrink-0 tabular-nums" suppressHydrationWarning>
+      {label}
+    </span>
+  );
 }

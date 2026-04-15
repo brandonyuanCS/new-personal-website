@@ -1,4 +1,4 @@
-import { FooterClock } from "@/components/FooterClock";
+import { FooterClock } from "@/components/Footer.client";
 import { getCollegeStationWeather } from "@/lib/open-meteo";
 import { cn } from "@/lib/utils";
 
@@ -8,17 +8,17 @@ export async function Footer() {
   return (
     <footer
       className={cn(
-        "shrink-0 border-t border-zinc-200 dark:border-zinc-800",
+        "w-full shrink-0 px-6 py-4",
         "text-xs text-zinc-500 dark:text-zinc-400",
       )}
     >
       <div
         className={cn(
-          "mx-auto flex w-full max-w-lg items-center justify-between gap-4 px-6 py-4",
+          "mx-auto flex w-full max-w-lg items-center justify-between gap-4",
           "min-w-0",
         )}
       >
-        <div className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-1 gap-y-1">
           <span>college station, tx</span>
           <span className="text-zinc-300 dark:text-zinc-800">·</span>
           <FooterClock />
