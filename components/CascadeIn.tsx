@@ -6,7 +6,7 @@ interface CascadeInProps {
   baseDelay?: number; // delay before the first child starts (default 0)
 }
 
-export function CascadeIn({ children, stagger = 0.1, baseDelay = 0 }: CascadeInProps) {
+export function CascadeIn({ children, stagger = 0.075, baseDelay = 0 }: CascadeInProps) {
   return (
     <>
       {Children.map(children, (child, i) => {
