@@ -1,4 +1,4 @@
-import { collegeStationCoords, collegeStationTimezone } from "@/lib/college-station";
+import { collegeStationCoords, collegeStationTimezone } from '@/lib/college-station'
 
 export type CollegeStationWeather = {
   tempF: number;

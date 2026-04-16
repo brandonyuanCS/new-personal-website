@@ -1,13 +1,14 @@
 import { cn } from "@/lib/utils";
 import React from "react";
-import { LucideArrowUpRight } from 'lucide-react';
+import { LucideArrowUpRight, ExternalLink } from 'lucide-react';
 
 interface ButtonLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   name: string;
   description: string;
+  isExternal?: boolean;
 }
 
-export function ButtonLink({ name, description, className, ...props }: ButtonLinkProps) {
+export function ButtonLink({ name, description, isExternal, className, ...props }: ButtonLinkProps) {
   return (
     <a
       {...props}
@@ -23,11 +24,19 @@ export function ButtonLink({ name, description, className, ...props }: ButtonLin
         <span className="text-zinc-300 dark:text-zinc-800">·</span>
         <p className="text-zinc-600 dark:text-zinc-400">{description}</p>
       </div>
-      <LucideArrowUpRight 
-        size={15} 
-        strokeWidth={2.5}
-        className="text-zinc-400" 
-      />
+      {isExternal ? (
+        <ExternalLink 
+          size={13} 
+          strokeWidth={2.5}
+          className="text-zinc-400" 
+        />
+      ) : (
+        <LucideArrowUpRight 
+          size={15} 
+          strokeWidth={2.5}
+          className="text-zinc-400" 
+        />
+      )}
     </a>
   );
 }

@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { ButtonLink } from '@/components/ButtonLink';
 import { CascadeIn } from '@/components/CascadeIn';
-import { PROJECTS } from '@/lib/projects';
+import { NOTES } from '@/lib/notes';
 
-export default function ProjectsPage() {
+export default function NotesPage() {
   return (
     <div className="flex flex-1 flex-col items-center font-sans dark:bg-black px-6 pb-24 text-zinc-900 dark:text-zinc-100">
       <main className="flex w-full max-w-lg flex-col gap-16 mt-24">
@@ -18,18 +18,17 @@ export default function ProjectsPage() {
               <span>back</span>
             </Link>
 
-            <h1 className="text-2xl font-semibold tracking-tight">projects</h1>
+            <h1 className="text-2xl font-semibold tracking-tight">notes</h1>
           </section>
 
           <section>
             <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
-              {PROJECTS.map((p) => (
+              {NOTES.map((n) => (
                 <ButtonLink
-                  key={p.name}
-                  href={p.href}
-                  name={p.name}
-                  description={p.description}
-                  isExternal={true}
+                  key={n.slug}
+                  href={`/notes/${n.slug}`}
+                  name={n.name}
+                  description={n.description}
                 />
               ))}
             </div>

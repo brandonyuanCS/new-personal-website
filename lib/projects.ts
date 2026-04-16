@@ -1,96 +1,53 @@
-export type ProjectLink = { label: string; href: string };
-
 export type Project = {
-  slug: string;
   name: string;
   description: string;
-  summary: string[];
-  links?: ProjectLink[];
+  href: string;
 };
 
 export const PROJECTS: Project[] = [
   {
-    slug: "class2calendar",
     name: "class2calendar",
     description: "web extension to sync canvas assignments to google",
-    summary: [
-      "Browser extension that syncs Canvas LMS assignments into Google Calendar and Google Tasks using ICS parsing and Google Cloud APIs.",
-    ],
-    links: [{ label: "GitHub", href: "https://github.com/brandonyuanCS/class2calendar" }],
+    href: "https://github.com/brandonyuanCS/canvas2calendar",
   },
   {
-    slug: "rerouted",
     name: "rerouted",
     description: "optimization engine for airline flight disruptions",
-    summary: [
-      "Hackathon project: an optimization-oriented take on rerouting and recovery when airline schedules are disrupted.",
-    ],
-    links: [{ label: "GitHub", href: "https://github.com/brandonyuanCS/rerouted" }],
+    href: "https://github.com/brandonyuanCS/rerouted",
   },
   {
-    slug: "periph4all",
     name: "periph4all",
     description: "gaming mouse recommender using semantic search",
-    summary: [
-      "AI-based mouse recommender using transformer-style embeddings, with UMAP and graph views to explore similar peripherals.",
-    ],
-    links: [{ label: "Live demo", href: "https://periph4all.vercel.app/" }],
+    href: "https://periph4all.vercel.app/",
   },
   {
-    slug: "together",
     name: "together",
-    description: "peer-to-peer lending platform (Capital One track, hackathon)",
-    summary: [
-      "Peer-to-peer lending concept built for the Capital One track at a hackathon.",
-    ],
+    description: "a marketplace that supports peer-to-peer lending",
+    href: "https://github.com/adavidryu/c1-together",
   },
   {
-    slug: "previous-personal-site",
-    name: "previous personal site",
-    description: "earlier portfolio on github pages",
-    summary: ["Earlier portfolio hosted on GitHub Pages before this site."],
-    links: [{ label: "GitHub", href: "https://github.com/brandonyuanCS/brandonyuancs.github.io" }],
-  },
-  {
-    slug: "spotify-vibemap",
     name: "spotify vibemap",
-    description: "3d graphs from cosine similarity between songs",
-    summary: [
-      "Visualization experiment: 3D graphs derived from cosine similarity between tracks (e.g. from audio or embedding features).",
-    ],
+    description: "view connections between songs in a 3d graph",
+    href: "https://github.com/aggie-coding-club/Spotify-Playlist-Map",
   },
   {
-    slug: "restaurant-kiosk",
     name: "restaurant kiosk",
     description: "ordering & management",
-    summary: [
-      "Coursework covering restaurant ordering and management: one version with a standard web stack and another on the JVM.",
-    ],
+    href: "https://github.com/CSCE331-Fall2025/project3_group9",
   },
   {
-    slug: "lightgbm-malware-classifier",
     name: "lightgbm malware classifier",
-    description: "tabular malware classification with lightgbm",
-    summary: [
-      "Tabular features and a LightGBM model for malware classification.",
-    ],
+    description: "malware classification on EMBER",
+    href: "https://github.com/brandonyuanTAMU/csce-439-code",
   },
   {
-    slug: "competitive-programming-problems",
-    name: "competitive programming problems",
-    description: "a classic kattis problem in c++",
-    summary: [
-      "Solutions and practice on competitive programming, including a classic Kattis problem in C++.",
-    ],
+    name: "submarine materials",
+    description: "a competitive programming problem",
+    href: "https://github.com/brandonyuanCS/kattis-problem-submarine-materials",
+  },
+  {
+    name: "previous personal website",
+    description: "victim to the pursuit of newer UI libraries",
+    href: "https://github.com/brandonyuanCS/brandonyuancs.github.io",
   },
 ];
-
-const bySlug = new Map(PROJECTS.map((p) => [p.slug, p]));
-
-export function getProject(slug: string): Project | undefined {
-  return bySlug.get(slug);
-}
-
-export function getProjectSlugs(): string[] {
-  return PROJECTS.map((p) => p.slug);
-}
