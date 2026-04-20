@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "together",
-    description: "a marketplace that supports peer-to-peer lending",
+    description: "a marketplace to support peer-to-peer lending",
     href: "https://github.com/adavidryu/c1-together",
   },
   {
@@ -31,8 +31,8 @@ export const PROJECTS: Project[] = [
     href: "https://github.com/aggie-coding-club/Spotify-Playlist-Map",
   },
   {
-    name: "restaurant kiosk",
-    description: "ordering & management",
+    name: "restaurant management system",
+    description: "handles orders, stock, and analytics",
     href: "https://github.com/CSCE331-Fall2025/project3_group9",
   },
   {

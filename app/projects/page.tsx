@@ -30,6 +30,8 @@ export default function ProjectsPage() {
                   name={p.name}
                   description={p.description}
                   isExternal={true}
+                  target="_blank" 
+                  rel="noopener noreferrer"
                 />
               ))}
             </div>

@@ -1,38 +1,53 @@
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+const contentDir = path.join(process.cwd(), 'content', 'notes');
+
 export type Note = {
   slug: string;
   name: string;
   description: string;
   date: string;
-  content: string[];
+  content: string;
 };
 
-export const NOTES: Note[] = [
-  {
-    slug: "current-reading",
-    name: "current reading",
-    description: "books i'm working through",
-    date: "april 16, 2026",
-    content: [
-      "Placeholder — list the books you're reading here.",
-    ],
-  },
-  {
-    slug: "web-extensions",
-    name: "web extensions",
-    description: "learning messages, content scripts, manifests, etc.",
-    date: "april 12, 2026",
-    content: [
-      "Placeholder — write about what you've learned building browser extensions.",
-    ],
-  },
-];
-
-const bySlug = new Map(NOTES.map((n) => [n.slug, n]));
-
-export function getNote(slug: string): Note | undefined {
-  return bySlug.get(slug);
+export function getNoteSlugs(): string[] {
+  if (!fs.existsSync(contentDir)) return [];
+  return fs.readdirSync(contentDir)
+    .filter((file) => file.endsWith('.mdx') || file.endsWith('.md'))
+    .map(file => file.replace(/\.mdx?$/, ''));
 }
 
-export function getNoteSlugs(): string[] {
-  return NOTES.map((n) => n.slug);
+export function getNote(slug: string): Note | undefined {
+  try {
+    let fullPath = path.join(contentDir, `${slug}.mdx`);
+    if (!fs.existsSync(fullPath)) {
+      fullPath = path.join(contentDir, `${slug}.md`);
+    }
+    
+    if (!fs.existsSync(fullPath)) return undefined;
+
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+
+    return {
+      slug,
+      name: data.name,
+      description: data.description,
+      date: data.date,
+      content,
+    };
+  } catch (error) {
+    return undefined;
+  }
+}
+
+export function getAllNotes(): Note[] {
+  const slugs = getNoteSlugs();
+  const notes = slugs
+    .map((slug) => getNote(slug))
+    .filter((note): note is Note => note !== undefined);
+  
+  return notes.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }

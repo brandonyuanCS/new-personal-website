@@ -1,23 +1,12 @@
-'use client';
-
-import { useState } from 'react';
 import { CustomLink } from "@/components/CustomLink";
 import { ButtonLink } from "@/components/ButtonLink";
 import { ViewAll } from "@/components/ViewAll";
 import { CascadeIn } from "@/components/CascadeIn";
+import { CopyEmailButton } from "@/components/CopyEmailButton";
+import { getAllNotes } from "@/lib/notes";
 
 export default function Home() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText('brandonyuan05@gmail.com');
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-    }
-  };
+  const notes = getAllNotes();
 
   return (
     <div className="flex flex-1 flex-col items-center font-sans dark:bg-black px-6 pb-24 text-zinc-900 dark:text-zinc-100">
@@ -35,17 +24,7 @@ export default function Home() {
               <span className="text-zinc-300 dark:text-zinc-800">·</span>
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-black dark:hover:text-white transition-colors">resume</a>
               <span className="text-zinc-300 dark:text-zinc-800">·</span>
-              <button
-                onClick={handleCopy}
-                className="hover:text-black dark:hover:text-zinc-200 transition-all duration-200 group relative cursor-pointer"
-              >
-                <span className={`inline-block transition-all duration-300 ${copied ? 'opacity-0 blur-sm scale-90' : 'opacity-100 blur-none scale-100'}`}>
-                  email
-                </span>
-                <span className={`absolute left-0 top-0 transition-all duration-300 ${copied ? 'opacity-100 blur-none scale-100' : 'opacity-0 blur-sm scale-110'}`}>
-                  copied!
-                </span>
-              </button>
+              <CopyEmailButton />
             </div>
           </section>
 
@@ -65,7 +44,7 @@ export default function Home() {
                 Currently, I&apos;m working on publishing <CustomLink href="https://github.com/brandonyuanCS/canvas2calendar" target="_blank" rel="noopener noreferrer">class2calendar</CustomLink> and organizing student-led projects in the <CustomLink href="https://www.aggiecodingclub.com/" target="_blank" rel="noopener noreferrer">Aggie Coding Club</CustomLink>.
               </p>
               <p>
-                In the future, I&apos;ll be joining <CustomLink href="https://www.att.jobs/technology-programs-and-internships" target="_blank" rel="noopener noreferrer">AT&T</CustomLink> and <CustomLink href="https://www.ibm.com/us-en" target="_blank" rel="noopener noreferrer">IBM</CustomLink> as a software engineer intern.
+                Soon, I&apos;ll be joining <CustomLink href="https://www.att.jobs/technology-programs-and-internships" target="_blank" rel="noopener noreferrer">AT&T</CustomLink> and then <CustomLink href="https://www.ibm.com/us-en" target="_blank" rel="noopener noreferrer">IBM</CustomLink> as a software engineer intern.
               </p>
             </div>
           </section>
@@ -83,14 +62,22 @@ export default function Home() {
             </div>
           </section>
 
-          {/* notes */}
           <section className="flex flex-col gap-3">
             <h2 className="text-md font-semibold">
               notes
             </h2>
             <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
-              <ButtonLink href="/notes/current-reading" name="current reading" description="books i'm working through" />
-              <ButtonLink href="/notes/web-extensions" name="web extensions" description="learning messages, content scripts, manifests, etc." />
+              {notes
+                .filter((note) => note.slug === "current-reading")
+                .slice(0, 3)
+                .map((note) => (
+                  <ButtonLink
+                    key={note.slug}
+                    href={`/notes/${note.slug}`}
+                    name={note.name}
+                    description={note.description}
+                  />
+                ))}
             </div>
           </section>
 
@@ -101,9 +88,6 @@ export default function Home() {
             </h2>
             <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
               <ButtonLink href="https://www.instagram.com/brandon.trumpet/" target="_blank" rel="noopener noreferrer" name="trumpet & piano" description="check out my outdated music account at your own risk" isExternal />
-              {/* <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="misc item 2" description="placeholder description for misc item 2" />
-              <ButtonLink href="#" target="_blank" rel="noopener noreferrer" name="misc item 3" description="placeholder description for misc item 3" />
-              <ViewAll href="/misc" /> */}
             </div>
           </section>
         </CascadeIn>

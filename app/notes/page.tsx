@@ -2,7 +2,9 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { ButtonLink } from '@/components/ButtonLink';
 import { CascadeIn } from '@/components/CascadeIn';
-import { NOTES } from '@/lib/notes';
+import { getAllNotes } from '@/lib/notes';
+
+const NOTES = getAllNotes();
 
 export default function NotesPage() {
   return (

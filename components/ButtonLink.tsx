@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import { LucideArrowUpRight, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 
 interface ButtonLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   name: string;
@@ -8,15 +9,11 @@ interface ButtonLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> 
   isExternal?: boolean;
 }
 
-export function ButtonLink({ name, description, isExternal, className, ...props }: ButtonLinkProps) {
-  return (
-    <a
-      {...props}
-      className={cn(
-        "group flex items-center justify-between rounded-lg -mx-3 px-3 py-2 transition-all hover:bg-black/5 dark:hover:bg-white/5",
-        className
-      )}
-    >
+export function ButtonLink({ name, description, isExternal, className, href, ...props }: ButtonLinkProps) {
+  const isInternal = href && href.startsWith('/');
+  
+  const content = (
+    <>
       <div className="flex items-baseline gap-2">
         <span className="font-medium text-zinc-950 underline decoration-zinc-400 decoration-dotted underline-offset-4 dark:text-zinc-50 dark:decoration-zinc-600">
           {name}
@@ -37,6 +34,25 @@ export function ButtonLink({ name, description, isExternal, className, ...props 
           className="text-zinc-400" 
         />
       )}
+    </>
+  );
+
+  const classes = cn(
+    "group flex items-center justify-between rounded-lg -mx-3 px-3 py-2 transition-all hover:bg-black/5 dark:hover:bg-white/5",
+    className
+  );
+
+  if (isInternal) {
+    return (
+      <Link href={href as string} className={classes} {...props}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <a href={href} className={classes} {...props}>
+      {content}
     </a>
   );
 }
