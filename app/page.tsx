@@ -35,16 +35,16 @@ export default function Home() {
             </h2>
             <div className="flex flex-col gap-4 text-sm text-zinc-600 dark:text-zinc-400">
               <p>
-                I&apos;m a CS student at <CustomLink href="https://engineering.tamu.edu/cse/academics/eh-csce/index.html" target="_blank" rel="noopener noreferrer">Texas A&M</CustomLink> who is interested in backend systems, cloud infrastructure, and data-intensive applications.
+                I&apos;m a CS student at <CustomLink href="https://engineering.tamu.edu/cse/academics/eh-csce/index.html" target="_blank" rel="noopener noreferrer">Texas A&M</CustomLink> who is interested in backend development, cloud infrastructure, and distributed systems.
               </p>
               <p>
                 Previously, I built image verification &amp; signing pipelines at <CustomLink href="https://www.digicert.com/blog/how-c2pa-and-digicert-strengthen-digital-content-integrity" target="_blank" rel="noopener noreferrer">DigiCert</CustomLink>.
               </p>
               <p>
-                Currently, I&apos;m working on publishing <CustomLink href="https://github.com/brandonyuanCS/canvas2calendar" target="_blank" rel="noopener noreferrer">class2calendar</CustomLink> and organizing student-led projects in the <CustomLink href="https://www.aggiecodingclub.com/" target="_blank" rel="noopener noreferrer">Aggie Coding Club</CustomLink>.
+                This summer, I worked on tooling to observe, analyze, and optimize an AI sales platform at <CustomLink href="https://www.att.com/" target="_blank" rel="noopener noreferrer">AT&T</CustomLink>. 
               </p>
               <p>
-                Soon, I&apos;ll be joining <CustomLink href="https://www.att.jobs/technology-programs-and-internships" target="_blank" rel="noopener noreferrer">AT&T</CustomLink> and then <CustomLink href="https://www.ibm.com/us-en" target="_blank" rel="noopener noreferrer">IBM</CustomLink> as a software engineer intern.
+                Currently, I&apos;m organizing student-led projects in the <CustomLink href="https://www.aggiecodingclub.com/" target="_blank" rel="noopener noreferrer">Aggie Coding Club</CustomLink> and interning at <CustomLink href="https://www.ibm.com/products/watsonx" target="_blank" rel="noopener noreferrer">IBM</CustomLink> on the watsonx team.
               </p>
             </div>
           </section>
