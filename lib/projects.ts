@@ -40,14 +40,4 @@ export const PROJECTS: Project[] = [
     description: "malware classification on EMBER",
     href: "https://github.com/brandonyuanTAMU/csce-439-code",
   },
-  {
-    name: "submarine materials",
-    description: "a competitive programming problem",
-    href: "https://github.com/brandonyuanCS/kattis-problem-submarine-materials",
-  },
-  {
-    name: "previous personal website",
-    description: "victim to the pursuit of newer UI libraries",
-    href: "https://github.com/brandonyuanCS/brandonyuancs.github.io",
-  },
 ];

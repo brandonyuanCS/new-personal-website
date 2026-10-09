@@ -1,9 +1,9 @@
 import { CustomLink } from "@/components/CustomLink";
 import { ButtonLink } from "@/components/ButtonLink";
-import { ViewAll } from "@/components/ViewAll";
 import { CascadeIn } from "@/components/CascadeIn";
 import { CopyEmailButton } from "@/components/CopyEmailButton";
 import { getAllNotes } from "@/lib/notes";
+import { PROJECTS } from "@/lib/projects";
 
 export default function Home() {
   const notes = getAllNotes();
@@ -55,10 +55,17 @@ export default function Home() {
               projects
             </h2>
             <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
-              <ButtonLink href="https://github.com/brandonyuanCS/canvas2calendar" target="_blank" rel="noopener noreferrer" name="class2calendar" description="web extension to sync canvas assignments to google" isExternal />
-              <ButtonLink href="https://github.com/brandonyuanCS/rerouted" target="_blank" rel="noopener noreferrer" name="rerouted" description="optimization engine for airline flight disruptions" isExternal />
-              <ButtonLink href="https://periph4all.vercel.app/" target="_blank" rel="noopener noreferrer" name="periph4all" description="gaming mouse recommender using semantic search" isExternal />
-              <ViewAll href="/projects" />
+              {PROJECTS.map((project) => (
+                <ButtonLink
+                  key={project.name}
+                  href={project.href}
+                  name={project.name}
+                  description={project.description}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  isExternal
+                />
+              ))}
             </div>
           </section>
 
@@ -67,10 +74,7 @@ export default function Home() {
               notes
             </h2>
             <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
-              {notes
-                .filter((note) => note.slug === "current-reading")
-                .slice(0, 3)
-                .map((note) => (
+              {notes.map((note) => (
                   <ButtonLink
                     key={note.slug}
                     href={`/notes/${note.slug}`}
@@ -88,6 +92,8 @@ export default function Home() {
             </h2>
             <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
               <ButtonLink href="https://www.instagram.com/brandon.trumpet/" target="_blank" rel="noopener noreferrer" name="trumpet & piano" description="check out my outdated music account at your own risk" isExternal />
+              <ButtonLink href="https://github.com/brandonyuanCS/kattis-problem-submarine-materials" target="_blank" rel="noopener noreferrer" name="submarine materials" description="a competitive programming problem" isExternal />
+              <ButtonLink href="https://github.com/brandonyuanCS/brandonyuancs.github.io" target="_blank" rel="noopener noreferrer" name="previous personal website" description="victim to the pursuit of newer UI libraries" isExternal />
             </div>
           </section>
         </CascadeIn>
