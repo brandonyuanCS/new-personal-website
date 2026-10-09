@@ -14,7 +14,7 @@ export async function Footer() {
     >
       <div
         className={cn(
-          "mx-auto flex w-full max-w-lg items-center justify-between gap-4",
+          "mx-auto flex w-full max-w-xl items-center justify-between gap-4",
           "min-w-0",
         )}
       >
