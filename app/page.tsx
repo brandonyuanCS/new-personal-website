@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-1 flex-col items-center font-sans dark:bg-black px-6 pb-24 text-zinc-900 dark:text-zinc-100">
-      <main className="flex w-full max-w-lg flex-col gap-16 mt-24">
+      <main className="flex w-full max-w-xl flex-col gap-16 mt-24">
         <CascadeIn>
           {/* name + links */}
           <section className="flex flex-col gap-2 text-center sm:text-left">
@@ -54,7 +54,7 @@ export default function Home() {
             <h2 className="text-md font-semibold">
               projects
             </h2>
-            <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
+            <div className="-mx-3 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 text-sm text-zinc-600 sm:grid-cols-[max-content_minmax(0,1fr)_auto] dark:text-zinc-400">
               {PROJECTS.map((project) => (
                 <ButtonLink
                   key={project.name}
@@ -73,7 +73,7 @@ export default function Home() {
             <h2 className="text-md font-semibold">
               notes
             </h2>
-            <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
+            <div className="-mx-3 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 text-sm text-zinc-600 sm:grid-cols-[max-content_minmax(0,1fr)_auto] dark:text-zinc-400">
               {notes.map((note) => (
                   <ButtonLink
                     key={note.slug}
@@ -90,10 +90,10 @@ export default function Home() {
             <h2 className="text-md font-semibold">
               misc
             </h2>
-            <div className="flex flex-col text-sm text-zinc-600 dark:text-zinc-400">
+            <div className="-mx-3 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 text-sm text-zinc-600 sm:grid-cols-[max-content_minmax(0,1fr)_auto] dark:text-zinc-400">
               <ButtonLink href="https://www.instagram.com/brandon.trumpet/" target="_blank" rel="noopener noreferrer" name="trumpet & piano" description="check out my outdated music account at your own risk" isExternal />
               <ButtonLink href="https://github.com/brandonyuanCS/kattis-problem-submarine-materials" target="_blank" rel="noopener noreferrer" name="submarine materials" description="a competitive programming problem" isExternal />
-              <ButtonLink href="https://github.com/brandonyuanCS/brandonyuancs.github.io" target="_blank" rel="noopener noreferrer" name="previous personal website" description="victim to the pursuit of newer UI libraries" isExternal />
+              <ButtonLink href="https://github.com/brandonyuanCS/brandonyuancs.github.io" target="_blank" rel="noopener noreferrer" name="my personal website" description="victim to the pursuit of newer UI libraries" isExternal />
             </div>
           </section>
         </CascadeIn>

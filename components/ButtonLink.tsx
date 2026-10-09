@@ -14,31 +14,28 @@ export function ButtonLink({ name, description, isExternal, className, href, ...
   
   const content = (
     <>
-      <div className="flex items-baseline gap-2">
-        <span className="font-medium text-zinc-950 underline decoration-zinc-400 decoration-dotted underline-offset-4 dark:text-zinc-50 dark:decoration-zinc-600">
+        <span className="col-start-1 row-start-1 min-w-0 font-medium text-zinc-950 underline decoration-zinc-400 decoration-dotted underline-offset-4 sm:whitespace-nowrap dark:text-zinc-50 dark:decoration-zinc-600">
           {name}
         </span>
-        <span className="text-zinc-300 dark:text-zinc-800">·</span>
-        <p className="text-zinc-600 dark:text-zinc-400">{description}</p>
-      </div>
+        <span className="col-start-1 row-start-2 min-w-0 text-zinc-600 sm:col-start-2 sm:row-start-1 dark:text-zinc-400">{description}</span>
       {isExternal ? (
         <ExternalLink 
           size={13} 
           strokeWidth={2.5}
-          className="text-zinc-400" 
+          className="col-start-2 row-start-1 self-start mt-1 text-zinc-400 sm:col-start-3" 
         />
       ) : (
         <LucideArrowUpRight 
           size={15} 
           strokeWidth={2.5}
-          className="text-zinc-400" 
+          className="col-start-2 row-start-1 self-start mt-1 text-zinc-400 sm:col-start-3" 
         />
       )}
     </>
   );
 
   const classes = cn(
-    "group flex items-center justify-between rounded-lg -mx-3 px-3 py-2 transition-all hover:bg-black/5 dark:hover:bg-white/5",
+    "group col-span-full grid grid-cols-subgrid items-baseline gap-y-1 rounded-lg px-3 py-2 transition-colors hover:bg-black/5 dark:hover:bg-white/5",
     className
   );
 
