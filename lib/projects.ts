@@ -31,13 +31,13 @@ export const PROJECTS: Project[] = [
     href: "https://github.com/aggie-coding-club/Spotify-Playlist-Map",
   },
   {
-    name: "restaurant management system",
+    name: "restaurantMS",
     description: "handles orders, stock, and analytics",
     href: "https://github.com/CSCE331-Fall2025/project3_group9",
   },
   {
-    name: "lightgbm malware classifier",
-    description: "malware classification on EMBER",
+    name: "malware classifier",
+    description: "a LightGBM classifier trained on EMBER data",
     href: "https://github.com/brandonyuanTAMU/csce-439-code",
   },
 ];
