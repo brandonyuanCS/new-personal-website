@@ -14,7 +14,7 @@ export default function Home() {
         <CascadeIn>
           {/* name + links */}
           <section className="flex flex-col gap-2 text-center sm:text-left">
-            <h1 className="text-2xl font-semibold tracking-tight">
+            <h1 className="text-2xl font-bold tracking-tight">
               brandon yuan
             </h1>
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-sm text-zinc-500 dark:text-zinc-400">
@@ -30,7 +30,7 @@ export default function Home() {
 
           {/* about */}
           <section className="flex flex-col gap-3 text-center sm:text-left">
-            <h2 className="text-md font-semibold">
+            <h2 className="text-base font-bold">
               about
             </h2>
             <div className="flex flex-col gap-4 text-sm text-zinc-600 dark:text-zinc-400">
@@ -51,10 +51,10 @@ export default function Home() {
 
           {/* projects */}
           <section className="flex flex-col gap-3">
-            <h2 className="text-md font-semibold">
+            <h2 className="text-base font-bold">
               projects
             </h2>
-            <div className="-mx-3 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 text-sm text-zinc-600 sm:grid-cols-[max-content_minmax(0,1fr)_auto] dark:text-zinc-400">
+            <div className="-mt-2 -mx-3 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 text-sm text-zinc-600 sm:grid-cols-[max-content_minmax(0,1fr)_auto] dark:text-zinc-400">
               {PROJECTS.map((project) => (
                 <ButtonLink
                   key={project.name}
@@ -70,10 +70,10 @@ export default function Home() {
           </section>
 
           <section className="flex flex-col gap-3">
-            <h2 className="text-md font-semibold">
+            <h2 className="text-base font-bold">
               notes
             </h2>
-            <div className="-mx-3 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 text-sm text-zinc-600 sm:grid-cols-[max-content_minmax(0,1fr)_auto] dark:text-zinc-400">
+            <div className="-mt-2 -mx-3 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 text-sm text-zinc-600 sm:grid-cols-[max-content_minmax(0,1fr)_auto] dark:text-zinc-400">
               {notes.map((note) => (
                   <ButtonLink
                     key={note.slug}
@@ -87,10 +87,10 @@ export default function Home() {
 
           {/* misc */}
           <section className="flex flex-col gap-3">
-            <h2 className="text-md font-semibold">
+            <h2 className="text-base font-bold">
               misc
             </h2>
-            <div className="-mx-3 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 text-sm text-zinc-600 sm:grid-cols-[max-content_minmax(0,1fr)_auto] dark:text-zinc-400">
+            <div className="-mt-2 -mx-3 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 text-sm text-zinc-600 sm:grid-cols-[max-content_minmax(0,1fr)_auto] dark:text-zinc-400">
               <ButtonLink href="https://www.instagram.com/brandon.trumpet/" target="_blank" rel="noopener noreferrer" name="trumpet & piano" description="check out my outdated music account at your own risk" isExternal />
               <ButtonLink href="https://github.com/brandonyuanCS/kattis-problem-submarine-materials" target="_blank" rel="noopener noreferrer" name="submarine materials" description="a competitive programming problem" isExternal />
               <ButtonLink href="https://github.com/brandonyuanCS/brandonyuancs.github.io" target="_blank" rel="noopener noreferrer" name="my personal website" description="victim to the pursuit of newer UI libraries" isExternal />
