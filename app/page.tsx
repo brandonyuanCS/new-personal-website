@@ -35,16 +35,16 @@ export default function Home() {
             </h2>
             <div className="flex flex-col gap-4 text-sm text-zinc-600 dark:text-zinc-400">
               <p>
-                I&apos;m a CS student at <CustomLink href="https://engineering.tamu.edu/cse/academics/eh-csce/index.html" target="_blank" rel="noopener noreferrer">Texas A&M</CustomLink> who is interested in backend development, cloud infrastructure, and distributed systems.
+                I&apos;m a CS student at <CustomLink href="https://engineering.tamu.edu/cse/academics/eh-csce/index.html" target="_blank" rel="noopener noreferrer">Texas A&M University</CustomLink> who is interested in backend development, cloud infrastructure, and distributed systems.
               </p>
               <p>
-                Previously, I built image verification &amp; signing pipelines at <CustomLink href="https://www.digicert.com/blog/how-c2pa-and-digicert-strengthen-digital-content-integrity" target="_blank" rel="noopener noreferrer">DigiCert</CustomLink>.
+                This summer, I helped build the backend of an AI-powered sales platform at <CustomLink href="https://www.att.com/" target="_blank" rel="noopener noreferrer">AT&T</CustomLink>.
               </p>
               <p>
-                This summer, I worked on tooling to observe, analyze, and optimize an AI sales platform at <CustomLink href="https://www.att.com/" target="_blank" rel="noopener noreferrer">AT&T</CustomLink>. 
+                Previously, I built image verification and signing pipelines at <CustomLink href="https://www.digicert.com/blog/how-c2pa-and-digicert-strengthen-digital-content-integrity" target="_blank" rel="noopener noreferrer">DigiCert</CustomLink>.
               </p>
               <p>
-                Currently, I&apos;m organizing student-led projects in the <CustomLink href="https://www.aggiecodingclub.com/" target="_blank" rel="noopener noreferrer">Aggie Coding Club</CustomLink> and interning at <CustomLink href="https://www.ibm.com/products/watsonx" target="_blank" rel="noopener noreferrer">IBM</CustomLink> on the watsonx team.
+                Currently, I&apos;m organizing student-led projects in the <CustomLink href="https://www.aggiecodingclub.com/" target="_blank" rel="noopener noreferrer">Aggie Coding Club</CustomLink> and interning at <CustomLink href="https://www.ibm.com/products/watsonx" target="_blank" rel="noopener noreferrer">IBM</CustomLink> in the watsonx organization.
               </p>
             </div>
           </section>
@@ -92,8 +92,8 @@ export default function Home() {
             </h2>
             <div className="-mt-2 -mx-3 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 text-sm text-zinc-600 sm:grid-cols-[max-content_minmax(0,1fr)_auto] dark:text-zinc-400">
               <ButtonLink href="https://www.instagram.com/brandon.trumpet/" target="_blank" rel="noopener noreferrer" name="trumpet & piano" description="check out my outdated music account at your own risk" isExternal />
-              <ButtonLink href="https://github.com/brandonyuanCS/kattis-problem-submarine-materials" target="_blank" rel="noopener noreferrer" name="submarine materials" description="a competitive programming problem" isExternal />
-              <ButtonLink href="https://github.com/brandonyuanCS/brandonyuancs.github.io" target="_blank" rel="noopener noreferrer" name="my personal website" description="victim to the pursuit of newer UI libraries" isExternal />
+              <ButtonLink href="https://github.com/brandonyuanCS/kattis-problems" target="_blank" rel="noopener noreferrer" name="contest problems" description="two competitive programming problems i wrote" isExternal />
+              <ButtonLink href="https://github.com/brandonyuanCS/brandonyuancs.github.io" target="_blank" rel="noopener noreferrer" name="old personal website" description="a victim of shiny object syndrome" isExternal />
             </div>
           </section>
         </CascadeIn>
