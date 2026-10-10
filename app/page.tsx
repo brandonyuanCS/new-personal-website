@@ -3,7 +3,8 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { CascadeIn } from "@/components/CascadeIn";
 import { CopyEmailButton } from "@/components/CopyEmailButton";
 import { getAllNotes } from "@/lib/notes";
-import { PROJECTS } from "@/lib/projects";
+import { PROJECTS } from "@/content/projects";
+import { MISC } from "@/content/misc";
 
 export default function Home() {
   const notes = getAllNotes();
@@ -91,9 +92,17 @@ export default function Home() {
               misc
             </h2>
             <div className="-mt-2 -mx-3 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 text-sm text-zinc-600 sm:grid-cols-[max-content_minmax(0,1fr)_auto] dark:text-zinc-400">
-              <ButtonLink href="https://www.instagram.com/brandon.trumpet/" target="_blank" rel="noopener noreferrer" name="trumpet & piano" description="check out my outdated music account at your own risk" isExternal />
-              <ButtonLink href="https://github.com/brandonyuanCS/kattis-problems" target="_blank" rel="noopener noreferrer" name="contest problems" description="two competitive programming problems i wrote" isExternal />
-              <ButtonLink href="https://github.com/brandonyuanCS/brandonyuancs.github.io" target="_blank" rel="noopener noreferrer" name="old personal website" description="a victim of shiny object syndrome" isExternal />
+              {MISC.map((item) => (
+                <ButtonLink
+                  key={item.href}
+                  href={item.href}
+                  name={item.name}
+                  description={item.description}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  isExternal
+                />
+              ))}
             </div>
           </section>
         </CascadeIn>
