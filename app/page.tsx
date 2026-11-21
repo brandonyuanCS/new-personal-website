@@ -23,6 +23,8 @@ export default function Home() {
               <span className="text-zinc-300 dark:text-zinc-800">·</span>
               <a href="https://linkedin.com/in/brandonyuann" target="_blank" rel="noopener noreferrer" className="hover:text-black dark:hover:text-white transition-colors">linkedin</a>
               <span className="text-zinc-300 dark:text-zinc-800">·</span>
+              <a href="https://x.com/brandonyuann" target="_blank" rel="noopener noreferrer" className="hover:text-black dark:hover:text-white transition-colors">x</a>
+              <span className="text-zinc-300 dark:text-zinc-800">·</span>
               <CopyEmailButton />
             </div>
           </section>
